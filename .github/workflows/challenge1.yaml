@@ -1,0 +1,31 @@
+# challenge 1
+
+name: challenge1
+
+on: push
+
+jobs:
+  ubuntu:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: date
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - run: date
+
+
+  macos: 
+    runs-on: macos-latest
+    steps:
+      - run: date
+
+  depends:
+    needs: [ubuntu, windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
