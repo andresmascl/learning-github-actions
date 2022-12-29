@@ -29,5 +29,12 @@ Workflows are stored in `.github/workflows`
     Each workflow must have at least one job.  And each job must have at least
     one identifier.  By default jobs run in parallel.
     By default the run commands are interpreted by Bash.
-    
+
+Jobs can depend on eachother by adding the `needs` field.  Example:
+    `jobs`:
+        `job1`:
+        `job2`:
+        `job3`:
+            `needs`: [job1, job2]
+
 
